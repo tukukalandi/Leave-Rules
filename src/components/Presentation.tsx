@@ -11,6 +11,7 @@ import {
   Home as HomeIcon,
   Calculator,
   ArrowRight,
+  FileText,
 } from "lucide-react";
 import Slide from "./Slide";
 import { QASlide } from "./QASlide";
@@ -226,7 +227,7 @@ export default function Presentation() {
             </div>
 
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/b/be/India-post-logo.jpg"
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/India_Post.svg/1280px-India_Post.svg.png"
             alt="India Post Logo"
             className="h-10 w-auto rounded-md object-contain"
             referrerPolicy="no-referrer"
@@ -258,7 +259,7 @@ export default function Presentation() {
                     referrerPolicy="no-referrer"
                   />
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/b/be/India-post-logo.jpg"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/3/32/India_Post.svg/1280px-India_Post.svg.png"
                     alt="India Post Logo"
                     className="h-20 md:h-28 w-auto rounded-lg shadow-sm"
                     referrerPolicy="no-referrer"
@@ -276,7 +277,7 @@ export default function Presentation() {
                   covering all aspects of leave entitlements, calculations, and procedures.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
                   <button
                     onClick={() => setViewMode("rules")}
                     className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-post-red hover:bg-post-red/5 transition-all group"
@@ -300,6 +301,14 @@ export default function Presentation() {
                     <Calculator className="w-12 h-12 text-post-red mx-auto mb-4 group-hover:scale-110 transition-transform" />
                     <h3 className="font-black text-slate-800 uppercase text-sm mb-2">Calculations</h3>
                     <p className="text-xs text-slate-500 font-medium">15 Marks practice problems</p>
+                  </button>
+                  <button
+                    onClick={() => window.open("https://drive.google.com/drive/u/0/folders/1RvOl4u_xbRu6tPEAVB18eqP9xXAIFZyg", "_blank")}
+                    className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-post-red hover:bg-post-red/5 transition-all group"
+                  >
+                    <FileText className="w-12 h-12 text-post-red mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-black text-slate-800 uppercase text-sm mb-2">Study Materials</h3>
+                    <p className="text-xs text-slate-500 font-medium">External reference guides</p>
                   </button>
                 </div>
 
