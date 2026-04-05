@@ -4,7 +4,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC1",
     question: "Calculate the Earned Leave and Half Pay Leave at the credit of a Central Government Officer on 1-1-2022, from the following record of service: (i) Date of Birth: 15-08-1968 (ii) Date of Joining Service: 01-04-1992 (iii) Balance of leave at credit on 01-07-2019: EL 155, HPL 85. (iv) He was on leave for the following periods thereafter: Extraordinary Leave from 10-09-2019 to 24-09-2019 (15 days); Earned Leave for 25 days from 01-07-2020; Commuted Leave of 30 days from 01-02-2021 on medical certificate. (v) He was transferred on 01-11-2021 and availed 10 days joining time against admissible 15 days.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29, 30 of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -55,7 +55,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC2",
     question: "Calculate EL and HPL at credit on 01-07-2023 for a Postal Superintendent from the following particulars: (i) Date of Birth: 05-11-1970 (ii) Date of Joining Service: 15-07-1995 (iii) Balance of leave at credit on 01-01-2021: EL 230, HPL 140. (iv) He availed the following leave thereafter: Earned Leave for 30 days from 10-03-2021; Extraordinary Leave from 01-09-2021 to 30-09-2021 (30 days); He was transferred on 01-12-2021; availed 12 days JT against admissible 15 days; 40 days of absence from 01-06-2022 treated as dies non; Earned Leave for 15 days from 01-02-2023.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29 of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -110,7 +110,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC3",
     question: "Calculate EL and HPL at credit on 01-01-2024 for a Postal Assistant. He was under suspension for a period which was later regularized as Earned Leave. (i) Date of Birth: 12-06-1975 (ii) Date of Joining: 01-01-2000 (iii) Balance on 01-07-2021: EL 195, HPL 110. (iv) Subsequent events: Under suspension from 01-09-2021 to 30-11-2021 (91 days); regularized as EL; Earned Leave for 20 days from 01-03-2022; Commuted Leave for 45 days from 01-09-2022 on medical certificate; Extraordinary Leave for 20 days from 01-05-2023.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29, 30 of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -161,7 +161,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC4",
     question: "A Government servant has EL balance of 292 days on 01-07-2022. Calculate his EL and HPL balances on 01-07-2023. During this period: (a) He availed EL for 10 days from 01-09-2022. (b) He had 25 days of unauthorized absence from 01-11-2022 treated as dies non. (c) HPL balance on 01-07-2022 was 120 days. No HPL was availed.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26(1)(b) & 27(3), CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -208,7 +208,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC5",
     question: "A Government Officer (Level-8) retires on superannuation on 31-05-2025. Calculate EL and HPL at credit on date of retirement and the cash equivalent of leave salary. Balance on 01-01-2023: EL = 220 days, HPL = 95 days. Basic Pay: Rs.74,300. DA: 50%. Events after 01-01-2023: EL availed for 20 days from 01-04-2023; Commuted Leave for 30 days from 01-10-2023 on medical certificate; No leave taken after 01-01-2024.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29, 30, 39(2) of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -248,7 +248,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC6",
     question: "A Government servant avails EL encashment along with LTC. Show the effect on his leave account. Balance on 01-01-2023: EL = 185 days, HPL = 80 days. He availed LTC in June 2023 and encashed 10 days EL. He also availed EL for 12 days during LTC. Calculate balances on 01-07-2023.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 38-A of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -290,7 +290,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC7",
     question: "A Postal Superintendent (Level-7) dies in service on 15-08-2023. His EL balance on that date is 185 days and HPL balance is 145 days. Basic Pay: Rs.62,200. DA: 46%. Calculate cash equivalent payable to family.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rule 39-A, CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -330,7 +330,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC8",
     question: "Prepare the Leave Account of Shri Rajan, ASPO (Level-8) from 01-01-2020 to date of superannuation (30-04-2022) and calculate cash equivalent. Balance on 01-01-2020: EL = 240 days, HPL = 130 days. Basic Pay on retirement: Rs.74,300. DA: 50%. Events: EL for 30 days from 01-03-2020; EoL from 01-07-2020 to 20-07-2020 (20 days); Under suspension 01-01-2021 to 31-03-2021 regularized as EL.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29, 30, 39(2) of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -370,7 +370,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC9",
     question: "A Government servant in a Vacation Department (30 days vacation per year) has the following record. Calculate his EL and HPL on 01-01-2023. Balance on 01-01-2021: EL = 60 days, HPL = 45 days. In 2021: availed 20 days vacation out of 30. In 2022: availed full 30 days vacation. No other leave taken.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 28 & 29 of CCS (Leave) Rules, 1972]",
     answerSections: [
       {
@@ -412,7 +412,7 @@ export const questionsCalculations: Question[] = [
   {
     id: "CALC10",
     question: "Comprehensive Problem: Prepare the complete Leave Account of Shri Venkat, IPO (Level-9), from 01-07-2019 to retirement (31-07-2024) and calculate full cash equivalent. Balance on 01-07-2019: EL = 175 days, HPL = 98 days. Basic Pay: Rs.82,600. DA: 46%. Events: EL for 15 days from 15-09-2019; EoL from 01-06-2020 to 20-06-2020 (20 days); 26 days unauthorized absence from 01-03-2021 treated as dies non; Commuted Leave 42 days from 01-09-2021; Transfer on 01-11-2022 availed 8 days JT against 15 days.",
-    marks: "5 Marks",
+    marks: "15 Marks",
     reference: "[Rules 26, 27, 29, 30, 39(2) of CCS (Leave) Rules, 1972]",
     answerSections: [
       {

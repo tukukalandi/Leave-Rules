@@ -8,6 +8,9 @@ import {
   X,
   BookOpen,
   HelpCircle,
+  Home as HomeIcon,
+  Calculator,
+  ArrowRight,
 } from "lucide-react";
 import Slide from "./Slide";
 import { QASlide } from "./QASlide";
@@ -25,13 +28,13 @@ const allQuestions = [
   ...questionsPart4,
 ];
 
-type ViewMode = "rules" | "qa" | "calculations";
+type ViewMode = "home" | "rules" | "qa" | "calculations";
 
 export default function Presentation() {
   const [currentRuleIndex, setCurrentRuleIndex] = useState(0);
   const [currentQAIndex, setCurrentQAIndex] = useState(0);
   const [currentCalcIndex, setCurrentCalcIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<ViewMode>("rules");
+  const [viewMode, setViewMode] = useState<ViewMode>("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [directSearch, setDirectSearch] = useState("");
@@ -61,6 +64,10 @@ export default function Presentation() {
   }, [searchQuery]);
 
   const handleNext = () => {
+    if (viewMode === "home") {
+      setViewMode("rules");
+      return;
+    }
     if (viewMode === "rules") {
       if (currentRuleIndex < rules.length - 1) {
         setCurrentRuleIndex((prev) => prev + 1);
@@ -77,9 +84,12 @@ export default function Presentation() {
   };
 
   const handlePrev = () => {
+    if (viewMode === "home") return;
     if (viewMode === "rules") {
       if (currentRuleIndex > 0) {
         setCurrentRuleIndex((prev) => prev - 1);
+      } else {
+        setViewMode("home");
       }
     } else if (viewMode === "qa") {
       if (currentQAIndex > 0) {
@@ -178,6 +188,15 @@ export default function Presentation() {
 
             <div className="flex bg-slate-100 rounded-xl p-1 border border-slate-200">
               <button
+                onClick={() => setViewMode("home")}
+                className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all text-sm font-bold ${
+                  viewMode === "home" ? "bg-post-red text-white shadow-sm" : "text-slate-500 hover:bg-slate-200"
+                }`}
+              >
+                <HomeIcon size={16} />
+                <span className="hidden sm:inline">Home</span>
+              </button>
+              <button
                 onClick={() => setViewMode("rules")}
                 className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all text-sm font-bold ${
                   viewMode === "rules" ? "bg-post-red text-white shadow-sm" : "text-slate-500 hover:bg-slate-200"
@@ -201,7 +220,7 @@ export default function Presentation() {
                   viewMode === "calculations" ? "bg-post-red text-white shadow-sm" : "text-slate-500 hover:bg-slate-200"
                 }`}
               >
-                <Search size={16} />
+                <Calculator size={16} />
                 <span className="hidden sm:inline">Calculations</span>
               </button>
             </div>
@@ -222,7 +241,72 @@ export default function Presentation() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-post-yellow/10 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2" />
 
         <AnimatePresence mode="wait">
-          {viewMode === "rules" ? (
+          {viewMode === "home" ? (
+            <motion.div
+              key="home"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-b-8 border-post-red relative z-10"
+            >
+              <div className="p-8 md:p-12 text-center">
+                <div className="flex justify-center mb-8">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Emblem_of_India_with_transparent_background.png"
+                    alt="National Emblem"
+                    className="h-32 w-auto"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-5xl font-black text-post-red mb-4 uppercase tracking-tighter">
+                  Central Civil Services
+                  <br />
+                  <span className="text-post-yellow bg-post-red px-4 py-1 inline-block mt-2 rounded-lg shadow-lg">
+                    (Leave) Rules, 1972
+                  </span>
+                </h2>
+                <p className="text-lg md:text-xl text-slate-600 font-bold mb-12 max-w-2xl mx-auto leading-relaxed">
+                  A comprehensive interactive guide and Q&A resource for government employees, 
+                  covering all aspects of leave entitlements, calculations, and procedures.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                  <button
+                    onClick={() => setViewMode("rules")}
+                    className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-post-red hover:bg-post-red/5 transition-all group"
+                  >
+                    <BookOpen className="w-12 h-12 text-post-red mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-black text-slate-800 uppercase text-sm mb-2">Rules Guide</h3>
+                    <p className="text-xs text-slate-500 font-medium">Explore Rules 1 to 66 in detail</p>
+                  </button>
+                  <button
+                    onClick={() => setViewMode("qa")}
+                    className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-post-red hover:bg-post-red/5 transition-all group"
+                  >
+                    <HelpCircle className="w-12 h-12 text-post-red mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-black text-slate-800 uppercase text-sm mb-2">Q&A Section</h3>
+                    <p className="text-xs text-slate-500 font-medium">Commonly asked questions</p>
+                  </button>
+                  <button
+                    onClick={() => setViewMode("calculations")}
+                    className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 hover:border-post-red hover:bg-post-red/5 transition-all group"
+                  >
+                    <Calculator className="w-12 h-12 text-post-red mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                    <h3 className="font-black text-slate-800 uppercase text-sm mb-2">Calculations</h3>
+                    <p className="text-xs text-slate-500 font-medium">15 Marks practice problems</p>
+                  </button>
+                </div>
+
+                <button
+                  onClick={() => setViewMode("rules")}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-post-red text-white rounded-2xl font-black uppercase tracking-widest hover:bg-post-red/90 hover:scale-105 transition-all shadow-xl shadow-post-red/20 group"
+                >
+                  Start Presentation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </motion.div>
+          ) : viewMode === "rules" ? (
             <Slide
               key={`rule-${currentRuleIndex}`}
               rule={rules[currentRuleIndex]}
@@ -237,43 +321,41 @@ export default function Presentation() {
         </AnimatePresence>
 
         {/* Navigation Arrows */}
-        <div className="absolute inset-y-0 left-4 flex items-center">
+        <div className="absolute inset-y-0 left-2 md:left-4 flex items-center z-20">
           <button
             onClick={handlePrev}
             disabled={
-              viewMode === "rules"
-                ? currentRuleIndex === 0
-                : viewMode === "qa"
-                ? currentQAIndex === 0
-                : currentCalcIndex === 0
+              viewMode === "home" ||
+              (viewMode === "qa" && currentQAIndex === 0) ||
+              (viewMode === "calculations" && currentCalcIndex === 0)
             }
-            className="p-3 bg-white/80 hover:bg-white text-post-red rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all border border-post-red/10"
+            className="p-2 md:p-3 bg-white/80 hover:bg-white text-post-red rounded-full shadow-lg disabled:opacity-0 disabled:cursor-not-allowed transition-all border border-post-red/10"
           >
-            <ChevronLeft size={32} />
+            <ChevronLeft size={24} className="md:w-8 md:h-8" />
           </button>
         </div>
-        <div className="absolute inset-y-0 right-4 flex items-center">
+        <div className="absolute inset-y-0 right-2 md:right-4 flex items-center z-20">
           <button
             onClick={handleNext}
             disabled={
-              viewMode === "rules"
-                ? currentRuleIndex === rules.length - 1
-                : viewMode === "qa"
-                ? currentQAIndex === allQuestions.length - 1
-                : currentCalcIndex === questionsCalculations.length - 1
+              (viewMode === "rules" && currentRuleIndex === rules.length - 1) ||
+              (viewMode === "qa" && currentQAIndex === allQuestions.length - 1) ||
+              (viewMode === "calculations" && currentCalcIndex === questionsCalculations.length - 1)
             }
-            className="p-3 bg-white/80 hover:bg-white text-post-red rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed transition-all border border-post-red/10"
+            className="p-2 md:p-3 bg-white/80 hover:bg-white text-post-red rounded-full shadow-lg disabled:opacity-0 disabled:cursor-not-allowed transition-all border border-post-red/10"
           >
-            <ChevronRight size={32} />
+            <ChevronRight size={24} className="md:w-8 md:h-8" />
           </button>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="bg-post-red text-white px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+      <footer className="bg-post-red text-white px-4 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-4">
-          <div className="text-sm font-bold">
-            {viewMode === "rules" ? (
+          <div className="text-xs md:text-sm font-bold">
+            {viewMode === "home" ? (
+              <>Welcome Screen</>
+            ) : viewMode === "rules" ? (
               <>Rule {currentRuleIndex + 1} of {rules.length}</>
             ) : viewMode === "qa" ? (
               <>Question {currentQAIndex + 1} of {allQuestions.length}</>
@@ -281,21 +363,23 @@ export default function Presentation() {
               <>Calculation {currentCalcIndex + 1} of {questionsCalculations.length}</>
             )}
           </div>
-          <div className="w-32 sm:w-48 h-2 bg-white/20 rounded-full overflow-hidden">
-            <motion.div
-              className="h-full bg-post-yellow"
-              initial={{ width: 0 }}
-              animate={{
-                width: `${
-                  viewMode === "rules"
-                    ? ((currentRuleIndex + 1) / rules.length) * 100
-                    : viewMode === "qa"
-                    ? ((currentQAIndex + 1) / allQuestions.length) * 100
-                    : ((currentCalcIndex + 1) / questionsCalculations.length) * 100
-                }%`,
-              }}
-            />
-          </div>
+          {viewMode !== "home" && (
+            <div className="w-24 sm:w-48 h-2 bg-white/20 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-post-yellow"
+                initial={{ width: 0 }}
+                animate={{
+                  width: `${
+                    viewMode === "rules"
+                      ? ((currentRuleIndex + 1) / rules.length) * 100
+                      : viewMode === "qa"
+                      ? ((currentQAIndex + 1) / allQuestions.length) * 100
+                      : ((currentCalcIndex + 1) / questionsCalculations.length) * 100
+                  }%`,
+                }}
+              />
+            </div>
+          )}
         </div>
 
         <div className="text-center sm:text-right">
