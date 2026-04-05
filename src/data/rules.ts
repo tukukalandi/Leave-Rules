@@ -529,19 +529,22 @@ export const rules: Rule[] = [
     title: "Conditions for Grant of Study Leave",
     content: [
       "For higher studies or specialized training directly related to duties.",
-      "Must be of definite advantage to the government.",
-      "Not for academic/literary subjects generally."
+      "Minimum 5 years regular continuous service including probation required.",
+      "Not due to retire within 3 years (5 years for Central Health Service Officers).",
+      "Must be of definite advantage from public interest point of view.",
+      "Must execute Bond (Form 7/8 or 9/10) to serve for 3 years (5 years for CHS Officers)."
     ],
-    explanation: "The government supports you in getting smarter, but only if it helps you do your job better."
+    explanation: "The government supports you in getting smarter, but only if it helps you do your job better. You must have served long enough and promise to stay for a few years after your studies."
   },
   {
     id: "51",
     title: "Maximum Amount of Study Leave",
     content: [
       "Ordinarily 12 months at a time.",
-      "Max 24 months during entire service (36 months for Medical Officers)."
+      "General Govt. servants: Max 24 months during entire service.",
+      "Central Health Service Officers: Max 36 months for PG qualification."
     ],
-    explanation: "There's a limit to how long you can be away for studies while keeping your job."
+    explanation: "There's a limit to how long you can be away for studies while keeping your job. Medical officers get a bit more time for their specializations."
   },
   {
     id: "52",
@@ -564,10 +567,10 @@ export const rules: Rule[] = [
     id: "54",
     title: "Accounting of Study Leave",
     content: [
-      "Not debited against the regular leave account.",
-      "Can be combined with other leave, but total absence shouldn't exceed 28 months."
+      "Study leave shall NOT be debited against the regular leave account.",
+      "Can be combined with other leave, but total absence shouldn't exceed 28 months (36 months for PhD)."
     ],
-    explanation: "Study leave is a 'bonus' leave that doesn't use up your Earned Leave balance."
+    explanation: "Study leave is a 'bonus' leave that doesn't use up your Earned Leave balance. However, there is a cap on how long you can be away in total."
   },
   {
     id: "55",
@@ -581,10 +584,11 @@ export const rules: Rule[] = [
     id: "56",
     title: "Leave Salary During Study Leave",
     content: [
-      "Salary equal to pay drawn before leave.",
-      "Adjusted if the employee receives any scholarship or stipend."
+      "Study Leave in India/Outside India: Full pay (pay drawn before leave) + DA + HRA.",
+      "Any scholarship/stipend/remuneration received is adjusted against leave salary.",
+      "Salary not to fall below Half Pay Leave (HPL) salary level."
     ],
-    explanation: "You get your full pay, but if you're getting a scholarship, the government might reduce your salary so you don't 'double dip'."
+    explanation: "You get your full pay while studying, but if you're getting a scholarship, the government might reduce your salary so you don't 'double dip', though you'll always get at least half pay."
   },
   {
     id: "60",
@@ -615,32 +619,36 @@ export const rules: Rule[] = [
     id: "63",
     title: "Resignation/Retirement After Study Leave",
     content: [
-      "If you quit within 3 years of returning (5 years for some), you must refund the leave salary and fees paid by the government."
+      "If you quit within 3 years of returning (5 years for some), you must refund leave salary, fees, TA and other expenses.",
+      "Actual cost incurred by foreign Governments/Foundations/Trusts with interest must also be refunded.",
+      "No refund if retirement is on medical grounds or after deputation for permanent absorption in Autonomous Body."
     ],
-    explanation: "This is the 'penalty' for breaking your bond. If you leave early, you pay back what the government spent on you."
+    explanation: "This is the 'penalty' for breaking your bond. If you leave early, you pay back what the government spent on you, unless it's for health reasons or a specific transfer."
   },
   {
     id: "64",
     title: "Interpretation",
     content: [
-      "Doubts about rules are referred to the Ministry of Personnel for decision."
+      "Doubts about interpretation are referred to the Government of India in the Ministry of Personnel, Public Grievances and Pensions for decision."
     ],
-    explanation: "If there's an argument about what a rule means, the Ministry has the final say."
+    explanation: "If there's an argument about what a rule means, the specific Ministry has the final say."
   },
   {
     id: "65",
     title: "Power to Relax",
     content: [
-      "Ministry can relax rules in cases of undue hardship."
+      "Ministry can relax rules in cases of undue hardship (reasons to be recorded in writing).",
+      "IMPORTANT: Such relaxation requires concurrence of the Ministry of Personnel, Public Grievances and Pensions."
     ],
-    explanation: "The government can make exceptions if a rule is causing someone extreme and unfair trouble."
+    explanation: "The government can make exceptions if a rule is causing someone extreme and unfair trouble, but it needs high-level approval."
   },
   {
     id: "66",
     title: "Repeal and Saving",
     content: [
-      "Old rules are replaced by these, but actions taken under old rules remain valid."
+      "On commencement of these rules, all previous rules on leave cease to operate.",
+      "Anything done or leave earned under old rules is deemed to have been done under corresponding provisions of these rules."
     ],
-    explanation: "This rule transitions from the old system to the 1972 system smoothly."
+    explanation: "This rule transitions from the old system to the 1972 system smoothly, ensuring previous credits are protected."
   }
 ];
