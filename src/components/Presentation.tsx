@@ -250,11 +250,17 @@ export default function Presentation() {
               className="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-b-8 border-post-red relative z-10"
             >
               <div className="p-8 md:p-12 text-center">
-                <div className="flex justify-center mb-8">
+                <div className="flex justify-center items-center gap-8 mb-8">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Emblem_of_India_with_transparent_background.png"
                     alt="National Emblem"
-                    className="h-32 w-auto"
+                    className="h-24 md:h-32 w-auto"
+                    referrerPolicy="no-referrer"
+                  />
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/be/India-post-logo.jpg"
+                    alt="India Post Logo"
+                    className="h-20 md:h-28 w-auto rounded-lg shadow-sm"
                     referrerPolicy="no-referrer"
                   />
                 </div>
