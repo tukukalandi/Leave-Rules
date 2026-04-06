@@ -41,27 +41,33 @@ export default function Presentation() {
   const [directSearch, setDirectSearch] = useState("");
 
   const filteredRules = useMemo(() => {
-    return rules.filter(
-      (rule) =>
-        rule.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        rule.id.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return rules;
+    const terms = query.split(/\s+/);
+    return rules.filter((rule) => {
+      const searchableText = `${rule.id} ${rule.title}`.toLowerCase();
+      return terms.every((term) => searchableText.includes(term));
+    });
   }, [searchQuery]);
 
   const filteredQA = useMemo(() => {
-    return allQuestions.filter(
-      (qa) =>
-        qa.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        qa.id.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return allQuestions;
+    const terms = query.split(/\s+/);
+    return allQuestions.filter((qa) => {
+      const searchableText = `${qa.id} ${qa.question}`.toLowerCase();
+      return terms.every((term) => searchableText.includes(term));
+    });
   }, [searchQuery]);
 
   const filteredCalculations = useMemo(() => {
-    return questionsCalculations.filter(
-      (calc) =>
-        calc.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        calc.id.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return questionsCalculations;
+    const terms = query.split(/\s+/);
+    return questionsCalculations.filter((calc) => {
+      const searchableText = `${calc.id} ${calc.question}`.toLowerCase();
+      return terms.every((term) => searchableText.includes(term));
+    });
   }, [searchQuery]);
 
   const handleNext = () => {
