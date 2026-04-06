@@ -16,7 +16,7 @@ const Slide: React.FC<SlideProps> = ({ rule, index, total }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="w-full max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-post-red/10 flex flex-col min-h-[550px]"
+      className="w-full max-w-[95%] mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-post-red/10 flex flex-col min-h-[550px]"
     >
       {/* Header */}
       <div className="bg-post-red p-6 md:p-8 text-white relative overflow-hidden">
@@ -37,7 +37,7 @@ const Slide: React.FC<SlideProps> = ({ rule, index, total }) => {
       </div>
 
       {/* Content */}
-      <div className="flex-1 p-6 md:p-12 space-y-6 md:space-y-8 overflow-y-auto bg-white">
+      <div className="flex-1 p-4 md:p-8 space-y-6 md:space-y-8 overflow-y-auto bg-white">
         <div className="space-y-4 md:space-y-6">
           <h3 className="text-[10px] md:text-xs font-black text-post-red/40 uppercase tracking-[0.3em] flex items-center gap-3">
             <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-post-red" />

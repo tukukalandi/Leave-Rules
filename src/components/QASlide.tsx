@@ -13,7 +13,7 @@ export const QASlide: React.FC<QASlideProps> = ({ question }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.3 }}
-      className="bg-white rounded-xl shadow-2xl p-6 md:p-8 max-w-4xl w-full mx-auto border-t-8 border-post-red"
+      className="bg-white rounded-xl shadow-2xl p-4 md:p-6 max-w-[95%] w-full mx-auto border-t-8 border-post-red"
     >
       <div className="flex flex-col sm:flex-row justify-between items-start gap-2 mb-6">
         <span className="bg-post-yellow text-post-red font-bold px-3 py-1 rounded-full text-xs md:text-sm">

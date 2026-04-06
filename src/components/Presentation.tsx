@@ -145,7 +145,7 @@ export default function Presentation() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans selection:bg-post-yellow/30">
       {/* Header */}
-      <header className="bg-white border-b-4 border-post-red px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
+      <header className="bg-white border-b-4 border-post-red px-2 md:px-4 py-4 flex justify-between items-center sticky top-0 z-50 shadow-md">
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsMenuOpen(true)}
@@ -180,7 +180,7 @@ export default function Presentation() {
               placeholder={viewMode === "rules" ? "Jump to Rule (e.g. 26)" : viewMode === "qa" ? "Jump to Q (e.g. 1)" : "Jump to Calc (e.g. 1)"}
               value={directSearch}
               onChange={(e) => setDirectSearch(e.target.value)}
-              className="pl-4 pr-10 py-2 bg-slate-100 border-2 border-transparent focus:border-post-red focus:bg-white rounded-xl outline-none transition-all w-48 text-sm font-bold"
+              className="pl-4 pr-10 py-2 bg-slate-100 border-2 border-transparent focus:border-post-red focus:bg-white rounded-xl outline-none transition-all w-64 text-sm font-bold"
             />
             <button type="submit" className="absolute right-3 text-post-red">
               <Search size={18} />
@@ -236,7 +236,7 @@ export default function Presentation() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center p-6 relative overflow-hidden">
+      <main className="flex-1 flex items-center justify-center p-2 md:p-4 relative overflow-hidden">
         {/* Background Accents */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-post-red/5 rounded-full blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-post-yellow/10 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2" />
@@ -248,9 +248,9 @@ export default function Presentation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-b-8 border-post-red relative z-10"
+              className="max-w-[95%] w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-b-8 border-post-red relative z-10"
             >
-              <div className="p-8 md:p-12 text-center">
+              <div className="p-4 md:p-8 text-center">
                 <div className="flex justify-center items-center gap-8 mb-8">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Emblem_of_India_with_transparent_background.png"
@@ -272,7 +272,7 @@ export default function Presentation() {
                     (Leave) Rules, 1972
                   </span>
                 </h2>
-                <p className="text-lg md:text-xl text-slate-600 font-bold mb-12 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-lg md:text-xl text-slate-600 font-bold mb-12 max-w-4xl mx-auto leading-relaxed">
                   A comprehensive interactive guide and Q&A resource for government employees, 
                   covering all aspects of leave entitlements, calculations, and procedures.
                 </p>
@@ -336,7 +336,7 @@ export default function Presentation() {
         </AnimatePresence>
 
         {/* Navigation Arrows */}
-        <div className="absolute inset-y-0 left-2 md:left-4 flex items-center z-20">
+        <div className="absolute inset-y-0 left-1 md:left-2 flex items-center z-20">
           <button
             onClick={handlePrev}
             disabled={
@@ -349,7 +349,7 @@ export default function Presentation() {
             <ChevronLeft size={24} className="md:w-8 md:h-8" />
           </button>
         </div>
-        <div className="absolute inset-y-0 right-2 md:right-4 flex items-center z-20">
+        <div className="absolute inset-y-0 right-1 md:right-2 flex items-center z-20">
           <button
             onClick={handleNext}
             disabled={
@@ -365,7 +365,7 @@ export default function Presentation() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-post-red text-white px-4 md:px-6 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+      <footer className="bg-post-red text-white px-2 md:px-4 py-3 md:py-4 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
         <div className="flex items-center gap-4">
           <div className="text-xs md:text-sm font-bold">
             {viewMode === "home" ? (
@@ -379,7 +379,7 @@ export default function Presentation() {
             )}
           </div>
           {viewMode !== "home" && (
-            <div className="w-24 sm:w-48 h-2 bg-white/20 rounded-full overflow-hidden">
+            <div className="w-32 sm:w-64 h-2 bg-white/20 rounded-full overflow-hidden">
               <motion.div
                 className="h-full bg-post-yellow"
                 initial={{ width: 0 }}
@@ -423,7 +423,7 @@ export default function Presentation() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 left-0 w-full max-w-md bg-white z-[70] shadow-2xl flex flex-col border-r-4 border-post-red"
+              className="fixed inset-y-0 left-0 w-full max-w-lg bg-white z-[70] shadow-2xl flex flex-col border-r-4 border-post-red"
             >
               <div className="p-6 bg-slate-50 border-b border-slate-100">
                 <div className="flex items-center justify-between mb-6">
